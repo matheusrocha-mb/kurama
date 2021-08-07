@@ -1,0 +1,7 @@
+-r ../requirements.txt
+
+django-debug-toolbar==2.0
+ipdb==0.12.2
+pytest==6.1.2
+pytest-django==4.1.0
+pytest-mock==3.3.1
