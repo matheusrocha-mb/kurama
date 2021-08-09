@@ -7,6 +7,6 @@ urlpatterns = [
 ]
 
 # URLs para preço Real time:
-urlpatterns += [
-    path('assets/', include('assets_rt.urls')),
+urlpatterns = [
+    path('assets/', include('kurama.assets_rt.urls')),
 ] 

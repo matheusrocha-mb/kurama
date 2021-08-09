@@ -1,16 +1,20 @@
-from django.urls import path
+from django.urls import path 
 
-from kurama.assets_rt.views import GetAssetRealTimeValueView
-from kurama.assets_rt.views import GetAssetDaySummaryView
-from kurama.assets_rt.views import GetAssetLastValueView
-from kurama.assets_rt.views import GetAssetOfferView
-from kurama.assets_rt.views import GetAssetPriceView
+from kurama.assets_rt.views import RealTimeValueView
+from kurama.assets_rt.views import DaySummaryView
+from kurama.assets_rt.views import LastValueView
+from kurama.assets_rt.views import HigherBuyOfferView
+from kurama.assets_rt.views import LowerPriceView
+from kurama.assets_rt.views import HigherPriceView
+from kurama.assets_rt.views import GetAllTickersView
 
 
 urlpatterns = [
-    path('<int:op>/', GetAssetRealTimeValueView.as_view(), name='asset_real_time'),
-    path('<int:op>/offer/<int:id>', GetAssetOfferView.as_view(), name='asset_offer'),
-    path('<int:op>/price/<int:id>', GetAssetPriceView.as_view(), name='asset_price'),
-    path('<int:op>/last/trade', GetAssetLastValueView.as_view(), name='asset_last_trade'),
-    path('<int:op>/day/summary', GetAssetDaySummaryView.as_view(), name='asset_day_summary'),
+    path('<int:op>/', RealTimeValueView.as_view(), name='asset_real_time'),
+    path('<int:op>/higher-offer/', HigherBuyOfferView.as_view(), name='asset_higher_offer'),
+    path('<int:op>/price/lower/', LowerPriceView.as_view(), name='asset_lower_price'),
+    path('<int:op>/price/higher/', HigherPriceView.as_view(), name='asset_higher_price'),
+    path('<int:op>/price/last/', LastValueView.as_view(), name='asset_last_price_trade'),
+    path('<int:op>/ticker/all', GetAllTickersView.as_view(), name='asset_all_ticker'),
+    path('<int:op>/day-summary/', DaySummaryView.as_view(), name='asset_day_summary'),
 ]
