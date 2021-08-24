@@ -82,3 +82,7 @@ class AssetDaySummaryService():
         return {
             'error': e,
         }
+
+
+class Teste2():
+    pass
